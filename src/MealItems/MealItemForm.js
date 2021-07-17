@@ -2,14 +2,12 @@ import { useState } from "react";
 import Input from "../UI/Input";
 import classes from "./MealItemForm.module.css";
 
-const MealItemForm = ({ id: itemId, name, price, onAddItems }) => {
+const MealItemForm = ({ id: itemId, onAddItems }) => {
   const [amount, setAmount] = useState(1);
 
   const addItemHandler = (e) => {
     e.preventDefault();
-    let cartItem[itemId] = { itemId: itemId, itemName: name, qty: parseInt(amount), price: price };
-    // console.log("cartItem form", cartItem);
-    onAddItems(cartItem);
+    onAddItems(parseInt(amount));
   };
 
   return (
@@ -27,9 +25,7 @@ const MealItemForm = ({ id: itemId, name, price, onAddItems }) => {
           defaultValue: "1",
         }}
       />
-      <button type="submit">
-        <i className="fas fa-plus"></i> Add
-      </button>
+      <button type="submit"><i className="fas fa-plus"></i> Add </button>
     </form>
   );
 };
