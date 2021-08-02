@@ -11,13 +11,14 @@ const Backdrop = (props) => {
 const ModalOverlay = (props) => {
   return (
     <Card className={styles.modal}>
+      <i className="fa fa-close"> </i>
       <header className={styles.header}>
-        <h2>{props.title}</h2>
+        <h5>{props.title}</h5>
       </header>
       <div className={styles.content}>{props.children}</div>
-      <footer className={styles.actions}>
+      {/* <footer className={styles.actions}>
         <button onClick={props.onConfirm}>Okay</button>
-      </footer>
+      </footer> */}
     </Card>
   );
 };
